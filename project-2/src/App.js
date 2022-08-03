@@ -4,8 +4,11 @@ import axios from 'axios'
 const App = () => {
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get('/api/products/') // * <-- replace with your endpoint
-      console.log(data)
+      const { data } = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka')
+      const data1 = data.drinks.map(it=>{ 
+        return it.strDrink 
+      })
+      console.log(data1)
     }
     getData()
   })
