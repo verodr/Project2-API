@@ -1,19 +1,24 @@
 import { useEffect } from 'react'
-import axios from 'axios'
+import { BrowserRouter, Router, Route, Routes } from 'react-router-dom'
+// import axios from 'axios'
+
+import Home from './components/Home'
+import CocktailList  from './components/CocktailList'
+import CocktailSingle from './components/CocktailSingle'
 
 const App = () => {
-  useEffect(() => {
-    const getData = async () => {
-      const { data } = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka')
-      const data1 = data.drinks.map(it=>{ 
-        return it.strDrink 
-      })
-      console.log(data1)
-    }
-    getData()
-  })
-
-  return <h1>Hello World</h1>
+  return (
+    <div className="site-wrapper">
+      <BrowserRouter>
+        {/* <PageNavbar /> */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/:spirit" element={<CocktailList />}/>
+          <Route path="/:spirit/:name" element={<CocktailSingle />} />
+        </Routes>
+      </BrowserRouter>
+    </div>
+  )
 }
 
 export default App
