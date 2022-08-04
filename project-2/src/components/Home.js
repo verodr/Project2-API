@@ -16,14 +16,6 @@ const Home = () => {
     setPage(event.target.value)
   }
 
-  //   useEffect(() => {
-  //     const getData = async () => {
-  //       const { data } = await axios.get('www.thecocktaildb.com/api/json/v1/1/list.php?i=list')
-  //       setSpirits(data)
-  //     }
-  //     getData()
-  //   }, [])
-
   return (
     <>
       <main className="hero text-center">

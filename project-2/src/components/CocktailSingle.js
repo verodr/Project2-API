@@ -5,13 +5,19 @@ import { useParams } from 'react-router-dom'
 const CocktailSingle = () => {
   const { name } = useParams()
   const [singleDrink, setSingleDrink] = useState(null)
+  const [ errors, setErrors ] = useState(false)
+
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`)
-      setSingleDrink(data)
+      try {
+        const { data } = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`)
+        data.drinks ? setSingleDrink(data) : setErrors(true)
+        console.log('data', data.drink)
+      }  catch (err) {
+        setErrors(true)
+      }
     }
     getData()
-    console.log(singleDrink)
   }, [name])
 
   const getIngredientList = (item) => { 
@@ -27,7 +33,7 @@ const CocktailSingle = () => {
   return (
     <div> 
       { singleDrink ? 
-        <>
+        <h2 className="text-center">
           { singleDrink.drinks.map(item => {
             const { idDrink, strDrink, strDrinkThumb, strInstructions } = item
             return (
@@ -39,7 +45,11 @@ const CocktailSingle = () => {
               </div>
             )
           }) }
-        </> : 'TODO - ERROR' }
+        </h2> 
+        : 
+        <h4 className="text-center">
+          { errors ? 'Something went wrong. Check page details' : 'Loading...'}
+        </h4> }
     </div>
   )
 }

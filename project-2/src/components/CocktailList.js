@@ -10,11 +10,16 @@ import Card from 'react-bootstrap/Card'
 const CocktailList = () => {
   const { spirit } = useParams()
   const [drinksList, setDrinksList] = useState()
+  const [ errors, setErrors ] = useState(false)
+
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${spirit}`)
-      setDrinksList(data)
-    //   console.log(data)
+      try {
+        const { data } = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${spirit}`)
+        data.drinks ? setDrinksList(data) : setErrors(true)
+      } catch (err) {
+        setErrors(true)
+      }
     }
     getData()
   }, [spirit])
@@ -39,7 +44,11 @@ const CocktailList = () => {
                 </Col>
               )
             }) }
-          </> : 'TODO - ERROR' }
+          </> 
+          :
+          <h4 className="text-center">
+            { errors ? 'Something went wrong. Check page details' : 'Loading...'}
+          </h4> }
       </Row>
     </Container>        
   )
