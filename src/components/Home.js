@@ -6,8 +6,7 @@ import axios from 'axios'
 
 
 const Home = () => {
-  const [page, setPage] = useState(null)
-  //   const [spirits, setSpirits] = useState(null)
+  const [page, setPage] = useState('Vodka')
 
   const handleChange = (event) => {
     setPage(event.target.value)
@@ -20,7 +19,6 @@ const Home = () => {
           <h1 className='display-3'>Welcome to our Cocktail Library</h1>
           <p className='lead'>Please select your favourite Spirit to find a Cocktail</p>
           <select name="spirits" id="dropDown" onChange={handleChange}>
-            <option value="null" >Please Select</option>
             <option value="Vodka" >Vodka</option>
             <option value="Gin">Gin</option>
             <option value="Tequila">Tequila</option>
@@ -33,8 +31,8 @@ const Home = () => {
             <option value="Sweet Vermouth">Sweet Vermouth</option>
             <option value="Amaretto">Amaretto</option>
           </select>
-          <Link className='btn dark' to={`/${page}`}><input type="image" src="https://media1.giphy.com/media/UK7bIbbuf6TbXIUtab/giphy.gif?cid=0165a076jormipls6kcaev04dfhkb5bhz2uzwa1msd3gs4w4&rid=giphy.gif&ct=s" /></Link>
-          <Link to="/random" className='btn dark'>RANDOM DRINK</Link>
+          <Link className='btn dark' to={`/cocktail/${page}`}><input type="image" src="https://media1.giphy.com/media/UK7bIbbuf6TbXIUtab/giphy.gif?cid=0165a076jormipls6kcaev04dfhkb5bhz2uzwa1msd3gs4w4&rid=giphy.gif&ct=s" /></Link>
+          <Link to="/random" className='btn dark' id = "randbtn">RANDOM DRINK</Link>
         </div>
       </main>
     </>

@@ -35,7 +35,7 @@ const CocktailList = () => {
               console.log(item)
               return (
                 <Col key={idDrink} md="6" lg="4" className='mb-4'>
-                  <Link key={idDrink} to={`/${spirit}/${strDrink}`}>
+                  <Link key={idDrink} to={`/cocktail/${spirit}/${strDrink}`}>
                     <Card>
                       <p> { strDrink } </p>
                       <img src={strDrinkThumb} />

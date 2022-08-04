@@ -16,10 +16,10 @@ const App = () => {
         <PageNavbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/null" element={<NotFound />} />
-          <Route path="/:spirit" element={<CocktailList />}/>
-          <Route path="/:spirit/:name" element={<CocktailSingle />} />
+          <Route path="/cocktail/:spirit" element={<CocktailList />}/>
+          <Route path="/cocktail/:spirit/:name" element={<CocktailSingle />} />
           <Route path="/random" element={<RandomDrink />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>
