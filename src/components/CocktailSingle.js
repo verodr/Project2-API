@@ -50,9 +50,14 @@ const CocktailSingle = () => {
                     <p> { strDrink } </p>
                     <hr />
                     <h2>Ingredients</h2>
-                    <p>{ getIngredientList(item) }</p>
+                    <ul>
+                      { getIngredientList(item).map(ingr =>{
+                        return <li key={ingr}> {ingr} </li>
+                      }) 
+                      }
+                    </ul>
                     <hr />
-                    <h2>Recipe Intsructions</h2>
+                    <h2>Recipe Instructions</h2>
                     <p> { strInstructions } </p>
                     <hr />
                   </Col>            
