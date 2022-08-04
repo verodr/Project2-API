@@ -16,6 +16,7 @@ const Home = () => {
     setPage(event.target.value)
   }
 
+
   return (
     <>
       <main className="hero text-center">
@@ -23,7 +24,7 @@ const Home = () => {
           <h1 className='display-3'>Welcome to our Cocktail Library🍹</h1>
           <p className='lead'>Please select your favourite Spirit to find a Cocktail</p>
           <select name="spirits" onChange={handleChange}>
-            <option value="null" >Please Select</option>
+            <option value="null">Please Select</option>
             <option value="Vodka" >Vodka</option>
             <option value="Gin">Gin</option>
             <option value="Tequila">Tequila</option>
@@ -37,6 +38,7 @@ const Home = () => {
             <option value="Amaretto">Amaretto</option>
           </select>
           <Link className='btn dark' to={`/${page}`}> GO! </Link>
+          <Link className='btn dark' to="/random">RANDOM DRINK</Link>
         </div>
       </main>
     </>
