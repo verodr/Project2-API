@@ -1,3 +1,28 @@
 * {
   box-sizing: border-box;
+  
+}
+
+.site-wrapper{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  main {
+    flex-grow: 1;
+    padding-top: 20px;
+  }
+}
+
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  .hero-container{
+    background-color: red;
+    padding: 30px;
+    border-radius: 8px;
+    height: 100vh;
+  }
 }

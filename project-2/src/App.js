@@ -5,12 +5,13 @@ import { BrowserRouter, Router, Route, Routes } from 'react-router-dom'
 import Home from './components/Home'
 import CocktailList  from './components/CocktailList'
 import CocktailSingle from './components/CocktailSingle'
+import PageNavbar from './components/PageNavbar'
 
 const App = () => {
   return (
     <div className="site-wrapper">
       <BrowserRouter>
-        {/* <PageNavbar /> */}
+        <PageNavbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/:spirit" element={<CocktailList />}/>
