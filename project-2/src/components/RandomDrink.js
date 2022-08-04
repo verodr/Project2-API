@@ -1,23 +1,22 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useParams } from 'react-router-dom'
 
-const CocktailSingle = () => {
-  const { name } = useParams()
+const RandomDrink = () => {
+
   const [singleDrink, setSingleDrink] = useState(null)
   const [ errors, setErrors ] = useState(false)
 
   useEffect(() => {
     const getData = async () => {
       try {
-        const { data } = await axios.get(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${name}`)
+        const { data } = await axios.get('https://www.thecocktaildb.com/api/json/v1/1/random.php')
         data.drinks ? setSingleDrink(data) : setErrors(true)
       }  catch (err) {
         setErrors(true)
       }
     }
     getData()
-  }, [name])
+  }, [])
 
   const getIngredientList = (item) => { 
     const ingredients = Object.keys( item ).filter(it => {
@@ -53,4 +52,4 @@ const CocktailSingle = () => {
   )
 }
 
-export default CocktailSingle
+export default RandomDrink

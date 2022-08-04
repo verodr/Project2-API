@@ -6,6 +6,7 @@ import Home from './components/Home'
 import CocktailList  from './components/CocktailList'
 import CocktailSingle from './components/CocktailSingle'
 import PageNavbar from './components/PageNavbar'
+import RandomDrink from './components/RandomDrink'
 import NotFound from './components/NotFound'
 
 const App = () => {
@@ -18,7 +19,7 @@ const App = () => {
           <Route path="/null" element={<NotFound />} />
           <Route path="/:spirit" element={<CocktailList />}/>
           <Route path="/:spirit/:name" element={<CocktailSingle />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/random" element={<RandomDrink />} />
         </Routes>
       </BrowserRouter>
     </div>
