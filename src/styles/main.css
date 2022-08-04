@@ -30,7 +30,20 @@
 
 h2 {
   text-shadow: 1px 1px #FF1493;
-}/*# sourceMappingURL=main.css.map */
-.navbar {
-  background: rgb(129 98 7);
 }
+
+nav {
+  background: rgb(129, 98, 7);
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+input {
+  height: 50px;
+}
+
+#dropDown {
+  color: rgb(129, 98, 7);
+}/*# sourceMappingURL=main.css.map */
