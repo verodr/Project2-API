@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+  color: antiquewhite;
+}
+
+.site-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.site-wrapper main {
+  flex-grow: 1;
+  padding-top: 20px;
+}
+
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../Images/photo-1572116469696-31de0f17cc34.avif);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.hero .hero-container {
+  padding: 30px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+h2 {
+  text-shadow: 1px 1px #FF1493;
+}
+
+nav {
+  background: rgb(129, 98, 7);
+}
+
+.container {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+input {
+  height: 50px;
+}
+
+#dropDown {
+  color: rgb(129, 98, 7);
+}/*# sourceMappingURL=main.css.map */
