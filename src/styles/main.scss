@@ -45,6 +45,7 @@ input {
 }
 #dropDown {
   color: rgb(129 98 7);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 #randbtn {
     border-color: beige;
@@ -62,5 +63,34 @@ p {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  padding-top: 20px;
   
+}
+
+.list-container {
+  padding-top: 20px;
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.list-wrapper {
+  background-image: url(../Images/fancylights.avif);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  
+  
+}
+
+.list-card {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+a {
+  text-decoration: none;
+}
+
+.lead {
+  color: antiquewhite;
 }
