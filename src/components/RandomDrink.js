@@ -33,16 +33,16 @@ const RandomDrink = () => {
   }
 
   return (
-    <div> 
+    <div className='drinkCard'> 
       { singleDrink ? 
-        <h2 className="text-center">
+        <div className="hero-container">
           { singleDrink.drinks.map(item => {
             const { idDrink, strDrink, strDrinkThumb, strInstructions } = item
             return (
               <Container className="text-center" key={idDrink}>
                 <Row>
                   <Col md="6">
-                    <img src={strDrinkThumb} />
+                    <img className='w-100' src={strDrinkThumb} />
                   </Col>
                   <Col md="6">
                     <h2>Name</h2>
@@ -64,7 +64,7 @@ const RandomDrink = () => {
               </Container>
             )
           }) }
-        </h2> 
+        </div> 
         : 
         <h4 className="text-center">
           { errors ? 'Something went wrong. Check page details' : 'Loading...'}
